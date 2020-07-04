@@ -29,7 +29,7 @@ export default class Auth {
     this.store.home.setLoading(true);
     const res = await NetworkOps.postRaw(Urls.signup, data, options);
     this.store.home.setLoading(false);
-    console.log(res);
+    console.log('signup',res);
     return true;
   }
 
