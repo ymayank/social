@@ -18,7 +18,7 @@ export default function MediaCard({ item }) {
       <Card>
         <CardActionArea>
           <CardMedia
-            component={item.type === 'Images' ? 'img' : 'video'}
+            component={'iframe'}
             alt={item.fileName}
             height="140"
             src={`${ACTIVE_HOST}${item.url}`}

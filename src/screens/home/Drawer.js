@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
 import { makeStyles, Drawer, List, Divider, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
-import { AccountCircle, PhotoLibrary, VideoLibrary } from '@material-ui/icons';
+import { AccountCircle, PhotoLibrary, VideoLibrary, Assignment, Audiotrack } from '@material-ui/icons';
 
 const useStyles = makeStyles({
   list: {
@@ -51,10 +51,22 @@ export default function LeftDrawer(props) {
       </ListItem>
       <Divider />
       <List>
-        {['Images', 'Video'].map((text, index) => (
-          <ListItem onClick={() => getData(text)} selected={selected === text} button key={text}>
-            <ListItemIcon>{ index === 0 ? <PhotoLibrary /> : <VideoLibrary />}</ListItemIcon>
-            <ListItemText primary={text} />
+        {[{
+          key: 'Images',
+          image: PhotoLibrary
+        },{
+          key: 'Video',
+          image: VideoLibrary
+        },{
+          key: 'Text',
+          image: Assignment
+        },{
+          key: 'Audio',
+          image: Audiotrack
+        }].map(item => (
+          <ListItem onClick={() => getData(item.key)} selected={selected === item.key} button key={item.key}>
+            <ListItemIcon><item.image /></ListItemIcon>
+            <ListItemText primary={item.key} />
           </ListItem>
         ))}
       </List>

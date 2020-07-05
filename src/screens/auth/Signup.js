@@ -121,7 +121,6 @@ function Signup(props) {
       } else {
         props.home.showToast({message: res.message});
       }
-      console.log('onSubmit', email, password)
     }
   }
 

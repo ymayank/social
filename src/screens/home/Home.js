@@ -47,7 +47,7 @@ function Home(props) {
     await localStorage.clear();
     props.history.push('/');
   }
-  console.log(props.profile.username, 'username')
+
   return (
     <Box component="div">
       <LeftDrawer isDrawer={isDrawer} setIsDrawer={setIsDrawer} {...props} />
