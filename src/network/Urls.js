@@ -1,4 +1,4 @@
-export const ACTIVE_HOST = 'http://13.235.3.38';
+export const ACTIVE_HOST = 'http://localhost:8080';
 
 const Urls = {
     login: 'login',
